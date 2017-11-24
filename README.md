@@ -1,6 +1,6 @@
 # ledger-toolchain
 
-##Installing the Ledger development toolchain
+## Installing the Ledger development toolchain
 
 The scripts contained here will setup your ledger app build or install environment.
 
@@ -27,7 +27,7 @@ make delete
 make load
 ```
 
-##Setting up the install environment only
+## Setting up the install environment only
 
 Alternatively, you can simply install the prebuilt app on the device.  A version of the app is contained within this repository.
 
