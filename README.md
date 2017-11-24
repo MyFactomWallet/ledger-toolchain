@@ -9,8 +9,10 @@ The testing and building of the app has been tested using Ubuntu 17.04.  Permiss
 
 First download the scripts:
 
+```
 git clone https://github.com/MyFactomWallet/ledger-toolchain.git
 cd ledger-toolchain
+```
 
 If you wish to build the app yourself, execute
 
