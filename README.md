@@ -1,6 +1,6 @@
 # ledger-toolchain
 
-## Installing the Ledger development toolchain
+## Downloading the scripts
 
 The scripts contained here will setup your ledger app build or install environment.
 
@@ -13,6 +13,8 @@ First download the scripts:
 git clone https://github.com/MyFactomWallet/ledger-toolchain.git
 cd ledger-toolchain
 ```
+
+## Installing the Ledger development toolchain
 
 If you wish to build the app yourself, execute
 
