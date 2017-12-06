@@ -7,7 +7,7 @@ The scripts contained here will setup your ledger app build or install environme
 
 The testing and building of the app has been tested using Ubuntu 17.04.  Permission for the Ledger USB device needs to first be granted by Linux.  Both the setup-buildenv.sh and setup.installenv.sh scripts will execute the setup-udev.sh script.
 
-Please note, the setup-udev.sh script needs to configure the udev rules in /etc which requires elevated privledges.  Because of this the setup-buildenv.sh and setup-installenv.sh will call 'sudo ./setup-udev.sh' and you will most likely be prompted for a password which is be your user password.  If you do not have sudo access to your machine, you will need to run the setup-udev.sh script as root and also be sure that pip is installed by calling 'apt install python-pip' as root.
+Please note, the setup-udev.sh script needs to configure the udev rules in /etc which requires elevated privledges.  Because of this, the setup-buildenv.sh and setup-installenv.sh will call 'sudo ./setup-udev.sh' and you will most likely be prompted for a password.  This password is your user account password.  If you do not have sudo access to your machine, you will need to run the setup-udev.sh script as root and also be sure that pip is installed by calling 'apt install python-pip' as root.
 
 First download the scripts:
 
