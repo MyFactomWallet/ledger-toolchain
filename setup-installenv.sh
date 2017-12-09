@@ -28,7 +28,7 @@ if [ ! -f /etc/udev/rules.d/20-hw1.rules ]; then
 fi
 
 if [ ! -f /usr/bin/pip ]; then
-  sudo apt install pip python-pip
+  sudo apt install python-pip
 fi
 #SECP_BUNDLED_EXPERIMENTAL=1 pip --no-cache-dir --no-binary secp256k1 install secp256k1
 
