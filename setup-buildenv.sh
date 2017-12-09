@@ -2,7 +2,7 @@
 
 ./setup-installenv.sh
 
-if [ -d bolos_env ]; then
+if [ ! -d bolos_env ]; then
 
   mkdir bolos_env
 
