@@ -2,8 +2,9 @@
 
 ./setup-installenv.sh
 
-if [ ! -d bolos_env ]; then
+if [ ! -d bolos_env/clang-arm-fropi ]; then
 
+  sudo apt-add-architecture i386
   mkdir bolos_env
 
   cd bolos_env
