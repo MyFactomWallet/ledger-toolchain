@@ -4,7 +4,10 @@
 
 if [ ! -d bolos_env/clang-arm-fropi ]; then
 
-  sudo apt-add-architecture i386
+  sudo dpkg --add-architecture i386
+  sudo apt-get update
+  sudo apt-get install libc6:i386 libncurses5:i386 libstdc++6:i386
+
   mkdir bolos_env
 
   cd bolos_env
