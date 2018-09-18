@@ -1,4 +1,10 @@
 bolos-env/
+bolos_env/
 nanos-secure-sdk/
 blue-secure-sdk/
 blue-app-factom/
+bin/app.elf
+ledger-app-factom
+ledger-factomjs
+blue-loader-python
+

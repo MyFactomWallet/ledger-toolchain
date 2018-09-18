@@ -19,21 +19,21 @@ if [ -d blue-app-factom ]; then
   echo Getting latest blue-app-factom
   cd blue-secure-sdk; git pull; cd -
 else
-  Cloning blue-app-factom
-  git clone https://github.com/MyFactomWallet/blue-app-factom.git
+  Cloning ledger-app-factom
+  git clone https://github.com/MyFactomWallet/ledger-app-factom.git
 fi
 
 if [ ! -f /etc/udev/rules.d/20-hw1.rules ]; then
   sudo ./setup-udev.sh
 fi
 
-if [ ! -f /usr/bin/pip ]; then
+if [ ! -f /usr/bin/pip3 ]; then
   sudo apt install python-pip
 fi
 #SECP_BUNDLED_EXPERIMENTAL=1 pip --no-cache-dir --no-binary secp256k1 install secp256k1
 
 LEDGERBLUE_PY=`pip list  --format=columns |grep ledgerblue`
 if [ -z "$LEDGERBLUE_PY" ]; then
-  pip install -Iv ledgerblue==0.1.15
+  pip install -Iv ledgerblue==0.1.19
 fi
 
