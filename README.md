@@ -1,10 +1,10 @@
 # ledger-toolchain
 
-## Setting up docker the scripts
+##Before you start *PLEASE* ensure you have your Ledger Nano S mnumonic backed up in case you need to reset your device!!!
+
+## Instructions for Side Loading the Factom Nano S App 
 
 The instructions contained here will side-load your ledger app onto your Nano S device.  This docker container only works from a linux environment.  It has been tested in Ubuntu 16.04 and 17.04, but may work in other environments.
-
-###Before you start *PLEASE* ensure you have your Ledger Nano S mnumonic backed up in case you need to reset your device!!!
 
 
 To prepare your ledger, first plug in the ledger device into your USB port and enter your pin number.  At this point you should be at the home screen on the Nano S.
