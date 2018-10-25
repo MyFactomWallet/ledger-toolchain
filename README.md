@@ -1,55 +1,43 @@
 # ledger-toolchain
 
-## Downloading the scripts
+## Setting up docker the scripts
 
-The scripts contained here will setup your ledger app build or install environment.
+The instructions contained here will side-load your ledger app onto your Nano S device.  This docker container only works from a linux environment.  It has been tested in Ubuntu 16.04 and 17.04, but may work in other environments.
+
+Before you start *PLEASE* ensure you have your Ledger Nano S mnumonic backed up in case you need to reset your device!!!
 
 
-The testing and building of the app has been tested using Ubuntu 17.04.  Permission for the Ledger USB device needs to first be granted by Linux.  Both the setup-buildenv.sh and setup.installenv.sh scripts will execute the setup-udev.sh script.
+To prepare your ledger, first plug in the ledger device into your USB port and enter your pin number.  At this point you should be at the home screen on the Nano S.
 
-Please note, the setup-udev.sh script needs to configure the udev rules in /etc which requires elevated privledges.  Because of this, the setup-buildenv.sh and setup-installenv.sh will call 'sudo ./setup-udev.sh' and you will most likely be prompted for a password.  This password is your user account password.  If you do not have sudo access to your machine, you will need to run the setup-udev.sh script as root and also be sure that pip is installed by calling 'apt install python-pip' as root.
-
-First download the scripts:
-
-```
-git clone https://github.com/MyFactomWallet/ledger-toolchain.git
-cd ledger-toolchain
-```
-
-## Installing the Ledger development toolchain
-
-If you wish to build the app yourself, execute
+First, you need to pull the docker container from the repository.  To do this open up a linux terminal execute the following command:
 
 ```
-./setup-buildenv.sh
+sudo docker pull bunfield/factomize-ledger
 ```
 
-After this script executes the Ledger BOLOS environment will be configured and the Factom Ledger source code will be compiled.  To install the Factom app that was just built first delete the existing app on the device if present, then install the new one by executing the following
+The docker pull command will take a while to complete if this is your first time pulling this container.  After it is finished, you should then run the following command.
 
 ```
-source configure.env
-cd blue-app-factom
-make delete
-make load
+sudo docker run --rm -it --privileged -v /dev/bus/usb:/dev/bus/usb bunfield/factomize-ledger
 ```
 
-## Setting up the install environment only
+Follow the instructions on the Nano S display.
 
-Alternatively, you can simply install the prebuilt app on the device.  A version of the app is contained within this repository.
+On your terminal console, you will see output similar to this (note the random keys that are generated will most likely be different than the ones generated for my device)
 
-To install the app ensure you are within the ledger-toolchain directory, then execute the following
 
 ```
-./setup-installenv.sh
+Generated random root public key : b'044ca67b2310a3d36ff1b35bfa115b2a33bb18da47f021ca3ea712cf9a3c6c2e0d51e193609139365b643be38ec834a8ecbd532c3098feceab08ea84b25b6682ac'
+Using test master key b'044ca67b2310a3d36ff1b35bfa115b2a33bb18da47f021ca3ea712cf9a3c6c2e0d51e193609139365b643be38ec834a8ecbd532c3098feceab08ea84b25b6682ac' 
+Using ephemeral key b'040761857590e41ecc495eb8783e0e4e5270851003a758d3d88cf2c88d2d88950762166a7b868a673f4f7b3dbe507fa3e8f6262cec7a8fa25aa4550f7c03723e6c'
+Broken certificate chain - loading from user key
+Generated random root public key : b'040b799c86cc896be70c0cc91bab5c413510033e14b277c7d96d19de3aa579a7cc2a8fae8ef5b7ec1c699d6222ff73b13017a7d755e3a4931794c200a6508c776d'
+Using test master key b'040b799c86cc896be70c0cc91bab5c413510033e14b277c7d96d19de3aa579a7cc2a8fae8ef5b7ec1c699d6222ff73b13017a7d755e3a4931794c200a6508c776d' 
+Using ephemeral key b'04e8e165567fe21927335a38c15680186e816df2b9732cb62767f052432ac834d770ee6d08810bb571b86898724b7b4dc25024fa92dc2ee3c87a61ad79651c201f'
+Broken certificate chain - loading from user key
+Application full hash : 06475a38e534d4c04d1f8ec6bad703256e02740024731a40a8f9bf3589375786
 ```
 
-The setup install environment script only needs to be executed once.  
+If you see the above outputs, then the application is has installed correctly.  At this point you will see your new Factom app on your Nano S device.  Launch the app on the Nano S and head on over to https://www.myfactomwallet.com.  
 
-To update the app on the device with the latest one that is part of this repository,
-
-```
-git pull
-./factomize-ledger.sh
-```
-
-
+If you are on the testnet, you can obtain your free Testoids at https://faucet.factoid.org.  
