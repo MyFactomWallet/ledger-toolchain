@@ -4,18 +4,18 @@
 
 ### Before you start *PLEASE* ensure you have your Ledger Nano S mnumonic backed up in case you need to reset your device!!!
 
-The instructions contained here will side-load your ledger app onto your Nano S device.  This docker container only works from a linux environment.  It has been tested in Ubuntu 16.04 and 17.04, but may work in other environments.
+The instructions contained here will side-load your new Factom ledger app onto your Nano S device.  This docker container only has been tested from a linux environment, specifically Ubuntu 16.04 and 17.04.
 
 
 To prepare your ledger, first plug in the ledger device into your USB port and enter your pin number.  At this point you should be at the home screen on the Nano S.
 
-First, you need to pull the docker container from the repository.  To do this open up a linux terminal execute the following command:
+Next, you need to pull the docker container from the repository.  To do this open up a linux terminal execute the following command:
 
 ```
 sudo docker pull bunfield/factomize-ledger
 ```
 
-The docker pull command will take a while to complete if this is your first time pulling this container.  After it is finished, you should then run the following command.
+The docker pull command will take a while to complete if it is your first time pulling this container.  After it is finished, make sure your Nano S didn't go back to sleep, If so, re-enter your PIN to get back to the Nano S home screen.  At this point, you should then run the following command.
 
 ```
 sudo docker run --rm -it --privileged -v /dev/bus/usb:/dev/bus/usb bunfield/factomize-ledger
@@ -23,7 +23,7 @@ sudo docker run --rm -it --privileged -v /dev/bus/usb:/dev/bus/usb bunfield/fact
 
 Follow the instructions on the Nano S display.
 
-On your terminal console, you will see output similar to this (note the random keys that are generated will most likely be different than the ones generated for my device)
+On your terminal console, you will see output similar to this as you accept the options on your Nano S.(Note the random keys that are generated will most likely be different than the ones generated for my device, so the output won't be exactly the same.)
 
 
 ```
@@ -38,6 +38,6 @@ Broken certificate chain - loading from user key
 Application full hash : 06475a38e534d4c04d1f8ec6bad703256e02740024731a40a8f9bf3589375786
 ```
 
-If you see the above outputs, then the application is has installed correctly.  At this point you will see your new Factom app on your Nano S device.  Launch the app on the Nano S and head on over to https://www.myfactomwallet.com.  
+If you see the above outputs, then the application has installed correctly.  You will now see your new Factom app on your Nano S device.  Launch the app on the Nano S and head on over to https://www.myfactomwallet.com.  
 
 If you are on the testnet, you can obtain your free Testoids at https://faucet.factoid.org.  
