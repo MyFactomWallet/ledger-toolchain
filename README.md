@@ -38,6 +38,6 @@ Broken certificate chain - loading from user key
 Application full hash : 06475a38e534d4c04d1f8ec6bad703256e02740024731a40a8f9bf3589375786
 ```
 
-If you see the above outputs, then the application has installed correctly.  You will now see your new Factom app on your Nano S device.  Launch the app on the Nano S and head on over to https://www.myfactomwallet.com.  
+If you see the above outputs, then the application has installed correctly.  You will now see your new Factom app on your Nano S device.  Launch the app on the Nano S and head on over to https://www.myfactomwallet.com.  Currently, the only browser supported for the Nano S and MFW is google chrome with the U2F extension.   Be sure to install the U2F extension before using the ledger.
 
 If you are on the testnet, you can obtain your free Testoids at https://faucet.factoid.org.  
