@@ -39,7 +39,7 @@ RUN pip install -Iv ledgerblue==0.1.19
 #CMD ["/usr/bin/python", "-m", "ledgerblue.loadApp", "--appFlags", "0x40", "--path", "\"44\'/131\'\"", "--path", "\"44\'/132\'\"", "--curve", "secp256k1", "--curve", "ed25519", "--tlv", "--targetId", "0x31100003", "--delete", "--fileName", "/opt/ledger-toolchain/bin/app.hex", "--appName", "Factom", "--appVersion", "1.1.2", "--dataSize", "0x00000040", "--icon", "0100000000ffffff00ffffffffffffffff3ff03ff03fff3fff0ff83fff3fff3fffffffffffffffffff"]
 #CMD ["/usr/bin/python", "-m", "ledgerblue.loadApp", "--appFlags", "0x40", "--path", "44\'/131\'", "--path", "44\'/132\'", "--curve", "secp256k1", "--curve", "ed25519", "--tlv", "--targetId", "0x31100003", "--delete", "--fileName", "/opt/ledger-toolchain/bin/app.hex", "--appName", "Factom", "--appVersion", "1.1.2", "--dataSize", "0x00000040", "--icon", "0100000000ffffff00ffffffffffffffff3ff03ff03fff3fff0ff83fff3fff3fffffffffffffffffff"]
 #CMD python -m ledgerblue.loadApp --appFlags 0x40 --path "44\'/131\'" --path "44\'/132\'" --curve secp256k1 --curve ed25519 --tlv --targetId 0x31100003 --delete --fileName /opt/ledger-toolchain/bin/app.hex --appName Factom --appVersion 1.1.3 --dataSize 0x00000040 --icon 0100000000ffffff00ffffffffffffffff3ff03ff03fff3fff0ff83fff3fff3fffffffffffffffffff
-CMD /opt/ledger-toolchain/factomize-ledger.sh
+CMD /opt/ledger-toolchain/factomize-ledger-docker.sh
 
 
 
