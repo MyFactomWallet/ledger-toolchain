@@ -7,21 +7,32 @@
 The instructions contained here will side-load your new Factom ledger app onto your Nano S device.  This docker container only has been tested from a linux environment, specifically Ubuntu 16.04 and 17.04.
 
 
-To prepare your ledger, first plug in the ledger device into your USB port and enter your pin number.  At this point you should be at the home screen on the Nano S.
+To prepare your ledger, first plug in the ledger device into your USB port and enter your pin number.  At this point you should be at the home screen on the Nano S. Do not start any apps on your Nano device.
 
-Next, you need to pull the docker container from the repository.  To do this open up a linux terminal execute the following command:
+Next, you need to pull the ledger-toolchain from the MFW repository.  The installer required python and pip version 3 or greater is installed on your system.  
 
-```
-sudo docker pull bunfield/factomize-ledger
-```
-
-The docker pull command will take a while to complete if it is your first time pulling this container.  After it is finished, make sure your Nano S didn't go back to sleep, If so, re-enter your PIN to get back to the Nano S home screen.  At this point, you should then run the following command.
+To do this open up a windows or linux terminal execute the following command:
 
 ```
-sudo docker run --rm -it --privileged -v /dev/bus/usb:/dev/bus/usb bunfield/factomize-ledger
+
+git clone https://github.com/MyFactomWallet/ledger-toolchain.git
+cd ledger-toolchain
+
 ```
 
-Follow the instructions on the Nano S display.
+If running in a Linux terminal execute the following:
+
+```
+./factomize-ledger.sh
+```
+
+If running in a Windows terminal make sure that python is in your path, then execute the following:
+
+```
+factomize-ledger.bat
+```
+
+Follow the instructions on the Nano S display.  
 
 On your terminal console, you will see output similar to this as you accept the options on your Nano S.(Note the random keys that are generated will most likely be different than the ones generated for my device, so the output won't be exactly the same.)
 
