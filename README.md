@@ -4,12 +4,14 @@
 
 ### Before you start *PLEASE* ensure you have your Ledger Nano S mnumonic backed up in case you need to reset your device!!!
 
-The instructions contained here will side-load your new Factom ledger app onto your Nano S device.  This docker container only has been tested from a linux environment, specifically Ubuntu 16.04 and 17.04.
+The instructions contained here will side-load your new Factom ledger app onto your Nano S device. Please note, the firmware loaded here only supports the Ledger firmware 1.6. Please update the firmware on your device before proceeding. 
 
 
 To prepare your ledger, first plug in the ledger device into your USB port and enter your pin number.  At this point you should be at the home screen on the Nano S. Do not start any apps on your Nano device.
 
 Next, you need to pull the ledger-toolchain from the MFW repository.  The installer required python and pip version 3 or greater is installed on your system.  
+
+
 
 To do this open up a windows or linux terminal execute the following command:
 
@@ -19,8 +21,23 @@ git clone https://github.com/MyFactomWallet/ledger-toolchain.git
 cd ledger-toolchain
 
 ```
+First, check to see if you have the Ledger side load python utilities installed
 
-If running in a Linux terminal execute the following:
+```
+pip list  --format=columns |grep ledgerblue
+```
+
+If the output of that command says you have 
+```
+ledgerblue                   0.1.31
+```
+installed you do not need to install the python utilities.  Otherwise, if the ledgerblue utility is either not installed or at version 0.1.31 then execute the following command.
+
+```
+pip install -Iv ledgerblue
+```
+
+After you get to this step, you are now ready to sideload the app.  If running in a Linux terminal execute the following:
 
 ```
 ./factomize-ledger.sh
