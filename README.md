@@ -2,7 +2,7 @@
 
 ## Instructions for Side Loading the Factom Nano S App 
 
-### Before you start *PLEASE* ensure you have your Ledger Nano S mnumonic backed up in case you need to reset your device!!!
+### Before you start *PLEASE* ensure you have your Ledger Nano S mnemonic backed up in case you need to reset your device!!!
 
 The instructions contained here will side-load your new Factom ledger app onto your Nano S device. Please note, the firmware loaded here only supports the Ledger firmware 1.6. Please update the firmware on your device before proceeding. 
 
